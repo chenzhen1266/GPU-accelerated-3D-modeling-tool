@@ -26,7 +26,7 @@ Main functions:
 # Smoothing iterations: 50-500 times (too high will cause over-smoothing)
 # Simplification rate: 0-0.9 (0.9 means retaining 10% of the patches)
 
-
+Project implementation method: After the cuda environment is configured, execute the following command: python GPU_interpolation_smoothing_expansion.py
 
 
 
@@ -65,3 +65,7 @@ Main functions:
 # 中值滤波核：必须为奇数（3/5/7）
 # 平滑迭代：50-500次（过高会导致过度平滑）
 # 简化率：0-0.9（0.9表示保留10%面片）
+
+
+
+项目实现方式：cuda环境配置好后执行以下命令：python GPU_interpolation_smoothing_expansion.py
