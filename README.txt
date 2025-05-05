@@ -1,3 +1,40 @@
+# This code is a conversion tool for batch conversion of NIfTI (.nii/.nii.gz) medical images into STL (.stl) 3D models.
+# Input format: (.nii/.nii.gz); Output format: (.stl)
+
+Main functions:
+# 1. CUDA accelerated interpolation: trilinear interpolation calculation using PyTorch; data is processed in GPU memory for accelerated calculation; supports arbitrary scale factors (example uses 2x interpolation)
+# 2. Improved mesh processing flow: use vtkMarchingCubes with intermediate threshold (0.5) to extract isosurfaces; enhanced smoothing parameter setting (50 iterations + low-pass filtering); add mesh simplification steps to optimize output quality
+# 3. Data preprocessing: explicit binarization to ensure data consistency; automatic processing of data dimensions and spatial parameters
+# 4. Error handling: explicit check of CUDA availability; improved array dimension handling
+# 5. Modular processing and centralized control
+
+# Methods:
+# Upsampling: trilinear interpolation upsampling
+# Smoothing: median filtering, enhanced smoothing and mesh simplification
+# Dilation: three-dimensional dilation structure element. The shape of the structural element is an anisotropic cross, and the structural element can be expanded by adjusting the radius.
+# When radius is 1, the structural element includes the center point and six adjacent points (front, back, left, right, top, and bottom). ; When radius is 2, the structural element is expanded to 26 neighborhoods, including all possible adjacent points.
+# dilation_iterations: dilation iterations (controls dilation amplitude)
+# scale_factor: trilinear interpolation upsampling multiple
+# smooth_iterations: smoothing filter iterations
+# median_filter_size: median filter kernel size
+# target_reduction: mesh simplification ratio
+
+# Parameter safety range recommendations:
+# Dilation times: 0-3 times recommended (0 means no dilation)
+# Upsampling multiple: 1-4 times recommended (too high will cause memory explosion)
+# Median filter kernel: must be an odd number (3/5/7)
+# Smoothing iterations: 50-500 times (too high will cause over-smoothing)
+# Simplification rate: 0-0.9 (0.9 means retaining 10% of the patches)
+
+
+
+
+
+
+
+
+
+
 # 该代码是一个 NIfTI（.nii/.nii.gz）医学影像 批量转换为 STL（.stl）三维模型 的转换工具。
 # 输入格式：（.nii/.nii.gz）；输出格式：（.stl）
 
