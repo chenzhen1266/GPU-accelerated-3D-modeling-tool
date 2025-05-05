@@ -1,4 +1,4 @@
-# This code is a conversion tool for batch conversion of NIfTI (.nii/.nii.gz) medical images into STL (.stl) 3D models.
+# This code is a conversion tool for batch conversion of NIfTI (.nii/.nii.gz) medical images to STL (.stl) 3D models. It can also be used for ultra-clear processing of 3D models.
 # Input format: (.nii/.nii.gz); Output format: (.stl)
 
 Main functions:
@@ -35,7 +35,7 @@ Main functions:
 
 
 
-# 该代码是一个 NIfTI（.nii/.nii.gz）医学影像 批量转换为 STL（.stl）三维模型 的转换工具。
+# 该代码是一个 NIfTI（.nii/.nii.gz）医学影像 批量转换为 STL（.stl）三维模型 的转换工具。也可用于3D模型的超清处理。
 # 输入格式：（.nii/.nii.gz）；输出格式：（.stl）
 
 
